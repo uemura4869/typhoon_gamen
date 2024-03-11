@@ -15,6 +15,8 @@ export const login = async (
       if (response.ok) {
         const data = await response.json();
         console.log("Login successful:", data);
+        // 2回目以降ログイン成功時、エラーメッセージをクリア
+        setError("");        
         // ここでトークンを保存したり、他のアクションを行います
       } else {
         setError("ログインに失敗しました");
